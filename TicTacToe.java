@@ -1,14 +1,38 @@
 /* 
+@version 10.0
 @author Vedh
- */
-class TicTacToe {
-	public static void main(String[] args ){
-		
-		// This is "Hello App Program"
-		
-		String msg = "This is Dev Branch";
-		
-		System.out.println(msg);
-		
-	}
+*/
+public class TicTacToe {
+
+    static char[][] board = {
+        {'X', 'O', 'X'},
+        {'X', 'O', 'O'},
+        {'O', 'X', 'X'}
+    };
+
+    public static void main(String[] args) {
+        System.out.println(isDraw());
+    }
+
+    static boolean isDraw() {
+
+        if (hasWon('X') || hasWon('O')) {
+            return false;
+        }
+
+        // Check for empty cells
+        for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
+                if (board[r][c] == '-') {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    static boolean hasWon(char symbol) {
+        return false;
+    }
 }
