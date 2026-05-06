@@ -1,14 +1,29 @@
 /* 
+@version 5.0
 @author Vedh
  */
-class TicTacToe {
-	public static void main(String[] args ){
-		
-		// This is "Hello App Program"
-		
-		String msg = "This is Dev Branch";
-		
-		System.out.println(msg);
-		
-	}
+public class TicTacToe {
+
+    static char[][] board = {
+        {'-', '-', '-'},
+        {'-', '-', '-'},
+        {'-', '-', '-'}
+    };
+
+    public static void main(String[] args) {
+        System.out.println(isValidMove(1, 1)); // fixed call
+    }
+
+    static boolean isValidMove(int row, int col) {
+
+        if (row < 0 || row > 2 || col < 0 || col > 2) {
+            return false;
+        }
+
+        if (board[row][col] != '-') {
+            return false;
+        }
+
+        return true;
+    }
 }
